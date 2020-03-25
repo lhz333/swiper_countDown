@@ -2,7 +2,7 @@
   <div class="hello">
     <h3>swiper中使用倒计时</h3>
     <swiper ref="swiper" class="swiper" :options="swiperOption">
-      <swiper-slide class="slide" v-for="(item, index) in arr" :key="index">
+      <swiper-slide v-for="(item, index) in arr" :key="index">
         <count-down :endDate="item.endDate"></count-down>
       </swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
@@ -57,5 +57,15 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style>
+.swiper {
+  position: relative;
+}
+.swiper .swiper-slide {
+  height: 50px;
+  line-height: 50px;
+}
+.swiper.swiper-container-horizontal > .swiper-pagination-bullets {
+  bottom: 0;
+}
 </style>
